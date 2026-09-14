@@ -1,12 +1,13 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, ComponentProps, ReactNode } from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
 const buttonVariants = {
   primary: "bg-accent text-background hover:bg-accent/90",
-  secondary: "border border-border bg-card text-foreground hover:bg-secondary",
-  ghost: "text-foreground hover:bg-card",
+  secondary:
+    "border-border bg-card text-foreground hover:border-foreground/20 hover:bg-secondary border",
+  ghost: "text-muted hover:text-foreground",
 } as const;
 
 type ButtonVariant = keyof typeof buttonVariants;
@@ -22,40 +23,61 @@ type ButtonAsButton = ButtonBaseProps &
     href?: undefined;
   };
 
-type ButtonAsLink = ButtonBaseProps & {
-  href: string;
-};
+type ButtonAsLink = ButtonBaseProps &
+  Omit<ComponentProps<typeof Link>, keyof ButtonBaseProps> & {
+    href: string;
+  };
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-export function Button({
-  children,
-  variant = "primary",
-  className,
-  ...props
-}: ButtonProps) {
-  const classes = cn(
-    "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-    "disabled:pointer-events-none disabled:opacity-50",
+function isLinkButton(props: ButtonProps): props is ButtonAsLink {
+  return typeof (props as ButtonAsLink).href === "string";
+}
+
+function buttonClassName(variant: ButtonVariant, className?: string) {
+  return cn(
+    "inline-flex h-10 items-center justify-center rounded-md px-5 text-sm font-medium whitespace-nowrap",
+    "transition-colors duration-200",
+    "disabled:cursor-not-allowed disabled:opacity-40",
     buttonVariants[variant],
     className,
   );
+}
 
-  if ("href" in props && props.href) {
+export function Button(props: ButtonProps) {
+  if (isLinkButton(props)) {
+    const {
+      href,
+      children,
+      variant = "primary",
+      className,
+      ...linkProps
+    } = props;
+
     return (
-      <Link href={props.href} className={classes}>
+      <Link
+        {...linkProps}
+        href={href}
+        className={buttonClassName(variant, className)}
+      >
         {children}
       </Link>
     );
   }
 
-  const buttonProps = props as ButtonAsButton;
+  const {
+    children,
+    variant = "primary",
+    className,
+    type,
+    ...buttonProps
+  } = props;
 
   return (
     <button
-      type={buttonProps.type ?? "button"}
-      className={classes}
       {...buttonProps}
+      type={type ?? "button"}
+      className={buttonClassName(variant, className)}
     >
       {children}
     </button>

@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Section as="div" className="flex min-h-svh items-center">
         <Container>
           <p className="text-muted text-sm font-medium tracking-[0.2em] uppercase">
