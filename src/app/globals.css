@@ -62,3 +62,15 @@ button[aria-disabled="true"] {
     scroll-behavior: auto;
   }
 }
+
+.hero-visual-frame {
+  min-height: 17rem;
+  aspect-ratio: 16 / 11;
+}
+
+@media (min-width: 64rem) {
+  .hero-visual-frame {
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+}
