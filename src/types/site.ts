@@ -29,6 +29,12 @@ export type ProcessStep = {
   description: string;
 };
 
+export type TechnologyGroup = {
+  id: string;
+  category: string;
+  technologies: string[];
+};
+
 export type SiteConfig = {
   name: string;
   tagline: string;

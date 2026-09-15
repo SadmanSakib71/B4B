@@ -4,6 +4,7 @@ import type {
   Service,
   ShowcaseProject,
   SiteConfig,
+  TechnologyGroup,
 } from "@/types/site";
 
 export const siteConfig: SiteConfig = {
@@ -145,5 +146,49 @@ export const processSteps: ProcessStep[] = [
     title: "Evolve",
     description:
       "Products grow after launch. We improve, optimize, extend, and adapt the system as new needs emerge.",
+  },
+];
+
+export const technologyGroups: TechnologyGroup[] = [
+  {
+    id: "frontend",
+    category: "Frontend",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    id: "backend",
+    category: "Backend",
+    technologies: ["Node.js", "Express", "REST APIs"],
+  },
+  {
+    id: "data",
+    category: "Data",
+    technologies: ["PostgreSQL", "SQL", "MongoDB"],
+  },
+  {
+    id: "ai-automation",
+    category: "AI & Automation",
+    technologies: [
+      "AI Applications",
+      "LLM Integrations",
+      "Workflow Automation",
+    ],
+  },
+  {
+    id: "engineering",
+    category: "Engineering",
+    technologies: [
+      "Git",
+      "GitHub",
+      "API Design",
+      "Authentication",
+      "Role-Based Access",
+    ],
   },
 ];
