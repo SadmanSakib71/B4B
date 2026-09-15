@@ -1,4 +1,9 @@
-import type { Principle, Service, SiteConfig } from "@/types/site";
+import type {
+  Principle,
+  Service,
+  ShowcaseProject,
+  SiteConfig,
+} from "@/types/site";
 
 export const siteConfig: SiteConfig = {
   name: "B4B",
@@ -79,5 +84,32 @@ export const principles: Principle[] = [
     title: "Built For The Long Run",
     description:
       "We aim for codebases and systems that other developers can understand, extend, and maintain as the product evolves.",
+  },
+];
+
+export const selectedWork: ShowcaseProject[] = [
+  {
+    id: "uapp-portal",
+    title: "Uapp Portal",
+    category: "Student Recruitment Platform",
+    description:
+      "A multi-role digital platform for managing student recruitment workflows, applications, content, communication, and analytics.",
+    technologies: ["React", "Next.js", "Node.js", "SQL", "AI"],
+  },
+  {
+    id: "connectify",
+    title: "Connectify",
+    category: "Social Platform",
+    description:
+      "A modern social platform with authentication, posts, media, comments, replies, likes, and protected user experiences.",
+    technologies: ["Next.js", "Auth", "Media", "PostgreSQL"],
+  },
+  {
+    id: "sneakerdrop",
+    title: "SneakerDrop",
+    category: "Real-Time Commerce",
+    description:
+      "A high-concurrency product drop system designed around inventory reservation, timed holds, transactional purchasing, and real-time stock updates.",
+    technologies: ["Node.js", "Redis", "SQL", "WebSockets"],
   },
 ];

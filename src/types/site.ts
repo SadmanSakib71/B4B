@@ -15,6 +15,14 @@ export type Principle = {
   description: string;
 };
 
+export type ShowcaseProject = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  technologies: string[];
+};
+
 export type SiteConfig = {
   name: string;
   tagline: string;
