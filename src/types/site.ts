@@ -9,6 +9,12 @@ export type Service = {
   description: string;
 };
 
+export type Principle = {
+  id: string;
+  title: string;
+  description: string;
+};
+
 export type SiteConfig = {
   name: string;
   tagline: string;
