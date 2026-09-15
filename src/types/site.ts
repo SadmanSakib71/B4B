@@ -3,6 +3,12 @@ export type NavItem = {
   href: string;
 };
 
+export type Service = {
+  id: string;
+  title: string;
+  description: string;
+};
+
 export type SiteConfig = {
   name: string;
   tagline: string;

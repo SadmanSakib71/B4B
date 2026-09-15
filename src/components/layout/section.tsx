@@ -12,6 +12,7 @@ type SectionProps = {
   as?: SectionTag;
   id?: string;
   background?: SectionBackground;
+  "aria-labelledby"?: string;
 };
 
 const backgroundClasses: Record<SectionBackground, string> = {
@@ -25,10 +26,12 @@ export function Section({
   as: Tag = "section",
   id,
   background,
+  "aria-labelledby": ariaLabelledBy,
 }: SectionProps) {
   return (
     <Tag
       id={id}
+      aria-labelledby={ariaLabelledBy}
       className={cn(
         "py-20 sm:py-24 lg:py-28",
         background && backgroundClasses[background],
