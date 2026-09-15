@@ -23,6 +23,12 @@ export type ShowcaseProject = {
   technologies: string[];
 };
 
+export type ProcessStep = {
+  id: string;
+  title: string;
+  description: string;
+};
+
 export type SiteConfig = {
   name: string;
   tagline: string;

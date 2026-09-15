@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";
 import { WhyB4B } from "@/components/sections/why-b4b";
 import { SelectedWork } from "@/components/sections/selected-work";
+import { Process } from "@/components/sections/process";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <WhyB4B />
       <SelectedWork />
+      <Process />
     </main>
   );
 }

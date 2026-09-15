@@ -146,7 +146,7 @@ export function Navbar() {
       <a
         href="#main-content"
         tabIndex={open ? -1 : undefined}
-        className="bg-card text-foreground sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-60 focus:rounded-md focus:px-3 focus:py-2 focus:text-sm"
+        className="bg-card text-foreground sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:px-3 focus:py-2 focus:text-sm"
       >
         Skip to content
       </a>

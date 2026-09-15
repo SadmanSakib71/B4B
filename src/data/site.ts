@@ -1,5 +1,6 @@
 import type {
   Principle,
+  ProcessStep,
   Service,
   ShowcaseProject,
   SiteConfig,
@@ -111,5 +112,38 @@ export const selectedWork: ShowcaseProject[] = [
     description:
       "A high-concurrency product drop system designed around inventory reservation, timed holds, transactional purchasing, and real-time stock updates.",
     technologies: ["Node.js", "Redis", "SQL", "WebSockets"],
+  },
+];
+
+export const processSteps: ProcessStep[] = [
+  {
+    id: "understand",
+    title: "Understand",
+    description:
+      "We start by understanding the problem, users, business goals, constraints, and what success should look like.",
+  },
+  {
+    id: "plan",
+    title: "Plan",
+    description:
+      "We turn requirements into a practical product direction, technical approach, priorities, and a clear execution plan.",
+  },
+  {
+    id: "build",
+    title: "Build",
+    description:
+      "We design and develop the product with clean architecture, thoughtful interfaces, and a focus on reliable delivery.",
+  },
+  {
+    id: "validate",
+    title: "Validate",
+    description:
+      "We test assumptions, review the experience, identify issues, and refine the product before and after release.",
+  },
+  {
+    id: "evolve",
+    title: "Evolve",
+    description:
+      "Products grow after launch. We improve, optimize, extend, and adapt the system as new needs emerge.",
   },
 ];
